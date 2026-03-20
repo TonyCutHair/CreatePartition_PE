@@ -1,0 +1,82 @@
+﻿<html>
+<script language="VBScript">
+Sub DoResize 
+   window.resizeTo (screen.width)*0.3,(screen.height)*0.3
+   window.moveTo (screen.width)*0.35,(screen.height)*0.35
+End Sub
+DoResize
+</script>
+
+<head>
+<HTA:APPLICATION
+  ID="Boot"
+  APPLICATIONNAME="Boot"
+  border="thin"
+  borderStyle="complex"
+  caption="NO"
+  contextMenu="NO"
+  MAXIMIZEBUTTON="NO"
+  MINIMIZEBUTTON="NO"
+  SCROLL="NO"
+  SHOWINTASKBAR="NO"
+  SINGLEINSTANCE="YES"
+  SYSMENU="NO"
+  WINDOWSTATE="NORMAL"/>
+        <style type="text/css">
+            .style1
+            {
+                text-align: center;
+                font-weight: bold;
+                font-size: medium;
+            }
+            .style2
+            {
+                font-size: xx-small;
+            }
+            .style3
+            {
+                text-align: center;
+                font-weight: bold;
+                font-size: medium;
+            }
+            .style4
+            {
+                text-align: center;
+                font-weight: bold;
+                font-size: 36;
+            }
+        </style>
+</head>
+
+<script language="VBScript">
+
+Sub PC_YZX
+    YZX.disabled = True
+    ZAI.disabled = True
+          Set WshShell = CreateObject("Wscript.Shell")
+          WshShell.Run ".\YZX\YZX.cmd", 1, False
+          Self.Close
+
+End Sub
+
+Sub PC_ZhanAI
+    YZX.disabled = True
+    ZAI.disabled = True
+          Set WshShell = CreateObject("Wscript.Shell")
+          WshShell.Run ".\ZHAN_AI\ZHAN_AI.cmd", 1, False
+          Self.Close
+
+End Sub
+
+</script>
+
+<body bgcolor="white" style="font-family: YaHei; font-size: x-small; text-align: center">
+<img src="logo.png" width="150" height="150" alt="logo">
+<br/>
+<br/>
+    <input id="YZX" type="button" value="安 装 云 在 线" onClick="PC_YZX" style="font-size: 24"/>
+<br/>
+<br/>
+    <input id="ZAI" type="button" value="安 装 战 AI" onClick="PC_ZhanAI"style="font-size: 24"/>
+</body>
+</html>
